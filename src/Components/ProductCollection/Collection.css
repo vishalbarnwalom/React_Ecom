@@ -1,35 +1,11 @@
-/* .collection_container{
-    display: flex;
-    flex-direction: row;
-   
-}
 
-.collection_item{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-}
-
-.collection_item img{
-      width: 300px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 10px;
-    gap: 2px;
-    border: 2px solid black;
-}
- */
 
 
 .collection {
   padding: 40px 6%;
   background-color: #ffffff;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh; 
 }
 
 .collection h1 {
@@ -39,37 +15,36 @@
   font-weight: 700;
 }
 
-
 .collection_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 30px;
+  margin-bottom: 30px; 
 }
-
 
 .collection_item {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-     margin-bottom: 30px;
   text-align: center;
-   border: 1px solid black;
+  border: 1px solid black;
+  transition: transform 0.3s ease;
 }
 
-.collection_item img:hover {
-  transform: translateY(-10px);
+.collection_item:hover {
+  transform: translateY(-5px);
 }
 
 .collection_item img {
   width: 100%;
   height: auto;
   max-height: 250px;
-  object-fit: inherit;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
   border: 2px solid black;
-  transition: transform 0.1s ease;
+  transition: transform 0.3s ease;
 }
 
 .collection_item h3 {
@@ -93,22 +68,36 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 5px;
 }
 
 .collection_item button:hover {
   background-color: #616161;
 }
 
+.modal_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgb(243, 200, 200);
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 
 @media (max-width: 1024px) {
   .collection_container {
-    grid-template-columns: repeat(2, 1fr); /* 2 items on tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .collection_container {
-    grid-template-columns: 1fr; /* 1 item on mobile */
+    grid-template-columns: 1fr;
   }
 
   .collection h1 {

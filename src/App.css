@@ -1,14 +1,20 @@
-#root {
-  max-width: 100%;
-  width: auto;
-  margin: 0 auto;
+
+
+* {
+  margin: 0;
   padding: 0;
-  text-align: center;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
   color: #333;
-  
+  background-color: #f4f4f4;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

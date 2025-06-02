@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
+import MyModal from "../../Modals"; 
 
 function Nav() {
-const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); 
 
-return (
+  return (
     <nav className="navbar">
-        <div className="navbar-container">
-            <h1 className="navbar-logo">V-Shop</h1>
-            <h1
-                className="menu-button"
-                onClick={() => setMenuOpen((open) => !open)}
-                style={{ cursor: "pointer" }}
-            >
-                 {menuOpen ? "❌" : "▤"}
-            </h1>
-            <ul className={`navbar-menu${menuOpen ? " open" : ""}`}>
-                <li className="navbar-item"><a href="/">Home</a></li>
-                <li className="navbar-item"><a href="#products">Products</a></li>
-                {/* <li className="navbar-item"><a href="#about">About Us</a></li>
-                <li className="navbar-item"><a href="#contact">Contact</a></li> */}
-            </ul>
+      <div className="navbar-container">
+        <h1 className="navbar-logo">V-Shop</h1>
+
+        {/* Hamburger icon */}
+        <h1
+          className="menu-button"
+          onClick={() => setMenuOpen((open) => !open)}
+          style={{ cursor: "pointer" }}
+        >
+          {menuOpen ? "❌" : "▤"}
+        </h1>
+
+        <ul className={`navbar-menu${menuOpen ? " open" : ""}`}>
+          <li className="navbar-item"><a href="/">Home</a></li>
+          <li className="navbar-item"><a href="/cart">Cart</a></li>
+        
+        </ul>
+        <div className="cartpart">
+       
+          <button className="cart-button" ><a href="/cart"> 🛒</a>
+           
+          </button>
+          <button className="profile-button"><a href="/profile">👤</a></button>
+          
         </div>
+      </div>
+
+     
     </nav>
-);
+  );
 }
+
 export default Nav;

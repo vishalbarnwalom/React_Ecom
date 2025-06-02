@@ -87,3 +87,28 @@
         text-align: center;
     }
 }
+
+.cart-button{
+   height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: white;
+    
+   
+}
+
+.cartpart{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.profile-button {
+     height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
