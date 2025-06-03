@@ -1,23 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Collection from './components/ProductCollection/Collection';
+import Collection from '../src/Components/ProductCollection/Collection';
 import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
 import Nav from './Components/Navbar/Nav';
-import { CartProvider } from './context/CartContext'; // 👈 Import this
+import { CartProvider } from "./context/CartContext";
+
+
 
 function App() {
   return (
-    <CartProvider> {/* 👈 Wrap your app in CartProvider */}
+    
+        <CartProvider>
       <Router>
-        <Nav />
+          <Nav />
         <Routes>
           <Route path="/" element={<Collection />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
+        <CartPage />
       </Router>
-    </CartProvider>
+   </CartProvider>
   );
 }
 

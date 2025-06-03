@@ -1,12 +1,17 @@
 
 
-
 .collection {
+  width: 100%;
+  min-height: 100vh; /* Full screen height */
   padding: 40px 6%;
-  background-color: #ffffff;
-  text-align: center;
-  min-height: 100vh; 
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light background for better visibility */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center;     /* Horizontally center content */
 }
+
 
 .collection h1 {
   font-size: 3rem;

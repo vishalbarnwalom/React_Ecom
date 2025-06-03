@@ -1,41 +1,69 @@
-// Pages/CartPage.jsx
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import "./CartPage.css"; // create CSS file for styling
+import "./CartPage.css";
 
 function CartPage() {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const {
+    cartItems,
+    increaseQuantity,
+    decreaseQuantity,
+    removeFromCart,
+    clearCart, // 👈 Accessing clearCart
+  } = useContext(CartContext);
 
-  const getTotalPrice = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  };
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
-    <div className="cart-page">
-      <h1>Your Cart 🛒</h1>
-
+    <div className="cart-container" id="cart">
+      <h1 className="cart-heading">🛒 Your Cart</h1>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="empty-cart">Your cart is empty.</p>
       ) : (
-        <div className="cart-items">
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.name} width="100" />
-              <div className="cart-info">
-                <h3>{item.name}</h3>
-                <p>Price: ₹{item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-                <p>Subtotal: ₹{item.price * item.quantity}</p>
-                <button onClick={() => removeFromCart(item.id)}>Remove ❌</button>
+        <>
+          <div className="cart-list">
+            {cartItems.map((item) => (
+              <div className="cart-item" key={item.id}>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="cart-item-image"
+                />
+                <div className="cart-item-details">
+                  <h3>{item.name}</h3>
+                  <p>Price: Rs {item.price}</p>
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  </div>
+                  <p>Total: Rs {item.price * item.quantity}</p>
+                  <button
+                    className="remove-btn"
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    🗑️
+                  </button>
+                </div>
               </div>
+            ))}
+            <div className="cart-total">
+              <h2>Total Price: Rs {totalPrice}</h2>
             </div>
-          ))}
-          <hr />
-          <h2>Total Price: ₹{getTotalPrice()}</h2>
-        </div>
+          </div>
+
+          {/* ✅ Clear All & Checkout Buttons */}
+          <div className="cart-actions">
+            <button className="clear-cart-btn" onClick={clearCart}>
+              Clear All
+            </button>
+            <button className="checkout-btn">
+              ⇉⇉Checkout⇉⇉ 
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
