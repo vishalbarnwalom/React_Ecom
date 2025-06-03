@@ -62,7 +62,7 @@ function CartPage() {
             <button className="clear-cart-btn" onClick={clearCart}>
               Clear All
             </button>
-            <button className="checkout-btn">
+            <button className="checkout-btn" onClick={() => window.location.href = "/#checkout"}>
               Go to CheckOut
             </button>
           </div>
