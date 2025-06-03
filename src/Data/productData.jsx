@@ -15,49 +15,49 @@ import pic8 from "../../src/assets/pic8.jpg";
 const productData = [
   {
     id: 1,
-    name: "Red T-Shirt",
-    price: 200,
+    name: "Red Fancy T-Shirt",
+    price: 599,
     image: redT,
     description: "Comfortable red cotton T-shirt."
   },
   {
     id: 2,
-    name: "Blue T-Shirt",
-    price: 200,
+    name: "Blue Fancy T-Shirt",
+    price: 700,
     image: blueT,
     description: "Cool blue T-shirt perfect for summer."
   },
   {
     id: 3,
-    name: "Green T-Shirt",
-    price: 200,
+    name: "Green Fancy T-Shirt",
+    price: 800,
     image: greenT,
     description: "Eco-friendly green cotton T-shirt."
   },
   {
     id: 4,
-    name: "Yellow T-Shirt",
-    price: 200,
+    name: "Yellow Fancy T-Shirt",
+    price: 550,
     image: yellowT,
     description: "Bright yellow cotton T-shirt."
   },
   {
     id: 5,
-    name: "Red T-Shirt",
-    price: 200,
+    name: "NinjA T-Shirt",
+    price: 1299,
     image: pic1,
     description: "Comfortable red cotton T-shirt."
   },
   {
     id: 6,
-    name: "Blue T-Shirt",
-    price: 200,
+    name: "Chill guy Red T-Shirt",
+    price: 670,
     image: pic2,
     description: "Cool blue T-shirt perfect for summer."
   },
   {
     id: 7,
-    name: "Green T-Shirt",
+    name: "White Chill Guy T-Shirt",
     price: 200,
     image: pic3,
     description: "Eco-friendly green cotton T-shirt."

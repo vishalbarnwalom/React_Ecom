@@ -5,6 +5,7 @@ import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
 import Nav from './Components/Navbar/Nav';
 import { CartProvider } from "./context/CartContext";
+import CheckoutPage from './Pages/CheckOut';
 
 
 
@@ -17,9 +18,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Collection />} />
           <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
         <CartPage />
+        <CheckoutPage />
       </Router>
    </CartProvider>
   );

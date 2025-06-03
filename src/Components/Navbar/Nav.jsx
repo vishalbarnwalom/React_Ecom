@@ -23,6 +23,7 @@ function Nav() {
         <ul className={`navbar-menu${menuOpen ? " open" : ""}`}>
           <li className="navbar-item"><a href="/">Home</a></li>
           <li className="navbar-item"><a href="/#cart">Cart</a></li>
+          <li className="navbar-item"><a href="/#checkout">Checkout</a></li>
         
         </ul>
         <div className="cartpart">

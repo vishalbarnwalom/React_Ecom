@@ -8,7 +8,7 @@ function CartPage() {
     increaseQuantity,
     decreaseQuantity,
     removeFromCart,
-    clearCart, // 👈 Accessing clearCart
+    clearCart, 
   } = useContext(CartContext);
 
   const totalPrice = cartItems.reduce(
@@ -21,6 +21,9 @@ function CartPage() {
       <h1 className="cart-heading">🛒 Your Cart</h1>
       {cartItems.length === 0 ? (
         <p className="empty-cart">Your cart is empty.</p>
+      
+        
+        
       ) : (
         <>
           <div className="cart-list">
@@ -60,7 +63,7 @@ function CartPage() {
               Clear All
             </button>
             <button className="checkout-btn">
-              ⇉⇉Checkout⇉⇉ 
+              Go to CheckOut
             </button>
           </div>
         </>
